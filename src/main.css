@@ -116,7 +116,6 @@ header nav a {
   font-weight: 500;
   line-height: 24px;
   color: #222;
-  font-style: italic;
   padding: 0 calc(0.8rem + 0.5vw);
   border-bottom: 1px solid #ebebeb;
 }

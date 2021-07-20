@@ -1,7 +1,7 @@
-const localStorage = window.localStorage;
+const { localStorage } = window;
 
 const storage = {
-  get () {
+  get() {
     return JSON.parse(localStorage.getItem('elements'));
   },
   set(key, val) {
@@ -13,7 +13,7 @@ const storage = {
     const newElement = {
       description,
       completed: false,
-      index: oldElements.length 
+      index: oldElements.length,
     };
     oldElements.push(newElement);
 
@@ -21,7 +21,7 @@ const storage = {
   },
   remove() {
 
-  }
+  },
 };
 
 export default storage;

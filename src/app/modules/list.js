@@ -3,17 +3,15 @@ import storage from './storage.js';
 
 const listWrapper = document.querySelector('.list');
 const input = document.querySelector('.input-task');
-let list = [];
 
-
-function render () {
+function render() {
   if (!storage.get()) {
     storage.set('elements', '[]');
     storage.addElement('Make Dinner');
     storage.addElement('Wash bath');
     storage.addElement('Call dad');
   }
-  listWrapper.innerHTML = "";
+  listWrapper.innerHTML = '';
   storage.get().forEach((element, i) => {
     const newLi = `
       <li data-id="${i}" draggable="true" class="item">
@@ -26,16 +24,14 @@ function render () {
   });
 }
 
-
 const listRender = () => {
   render();
   checkLabels();
-  console.log(storage.get())
 };
 
 input.addEventListener('keyup', (event) => {
   event.preventDefault();
-  if(event.keyCode === 13) {
+  if (event.keyCode === 13) {
     storage.addElement(input.value);
     input.value = '';
     listRender();
