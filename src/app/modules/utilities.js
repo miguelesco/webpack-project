@@ -5,6 +5,7 @@ function labelHanddle(icon , blur = false) {
     icon.classList.remove('fa-ellipsis-v');
     icon.classList.add('fa-trash-alt');
     icon.classList.add('remove');
+    icon.removeEventListener('mousedown');
   } else {
     icon.classList.remove('fa-trash-alt');
     icon.classList.remove('remove');
