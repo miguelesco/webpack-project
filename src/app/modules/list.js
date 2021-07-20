@@ -4,29 +4,34 @@ import storage from './storage.js';
 
 const listWrapper = document.querySelector('.list');
 const input = document.querySelector('.input-task');
-const list = storage.get();
+let list = [];
 
 
 function render () {
   if (!storage.get()) {
     storage.set('elements', '[]');
+    storage.addElement('Make Dinner');
+    storage.addElement('Wash bath');
+    storage.addElement('Call dad');
   }
   listWrapper.innerHTML = "";
   storage.get().forEach((element, i) => {
-    const list = `
+    const newLi = `
       <li data-id="${i}" draggable="true" class="item">
         <input type="checkbox" class="checkbox">
         <label class="text-task"  contenteditable="true">${element.description}</label>
         <i class="fas fa-ellipsis-v icon" aria-hidden="true"></i>
       </li>
     `;
-    listWrapper.innerHTML += list;
+    listWrapper.innerHTML += newLi;
   });
 }
+
 
 const listRender = () => {
   render();
   checkLabels();
+  console.log(storage.get())
   dragHanddler();
 };
 
@@ -40,6 +45,7 @@ function dragHanddler () {
     });
 
     element.addEventListener("dragstart", (event) => {
+      console.log(event.dataTransfer)
       event.dataTransfer.setData('index', i);
     });
 
@@ -58,7 +64,8 @@ function dragHanddler () {
 
 function swap(draggedIndex, dropIndex) {
   // We get the current items
-  list.map(element => {
+  list = storage.get();
+  list.forEach(element => {
     const dragged = element[draggedIndex];
     const drop = element[dropIndex];
 
@@ -69,8 +76,7 @@ function swap(draggedIndex, dropIndex) {
     // Update their indexes to reflect their new positions
     element.index = dropIndex;
     element.index = draggedIndex;
-    return list;
-  });
+  })
 
   storage.set('elements', JSON.stringify(list));
 
