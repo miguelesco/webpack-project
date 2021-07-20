@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Capstone Project - Web Design Course
+# Webpack Project
 
 <!-- In this project, I set up my first Capstone Project about a Web Design Course.  My goal here is make 2 pages (home and about) of my web development course for mobile and desktop version.
 
