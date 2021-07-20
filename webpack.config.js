@@ -1,4 +1,6 @@
+/* eslint-disable */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+/* eslint-disable */
 const path = require('path');
 
 const scssRules = {
