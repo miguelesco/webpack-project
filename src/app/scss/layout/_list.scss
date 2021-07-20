@@ -78,12 +78,18 @@
           outline: none;
           border-radius: 5px;
           padding: 0 8px;
+          &:focus {
+            background-color: yellow;
+          }
         }
 
         .remove {
           flex-basis: 5%;
           cursor: pointer;
           color: #aaa;
+          &:hover {
+            color: red;
+          }
         }
       }
     }

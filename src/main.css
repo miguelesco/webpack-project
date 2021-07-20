@@ -149,10 +149,16 @@ header nav a {
   border-radius: 5px;
   padding: 0 8px;
 }
+.content .list-container ul li label:focus {
+  background-color: yellow;
+}
 .content .list-container ul li .remove {
   flex-basis: 5%;
   cursor: pointer;
   color: #aaa;
+}
+.content .list-container ul li .remove:hover {
+  color: red;
 }
 .content .list-container .btn-clear {
   position: sticky;
