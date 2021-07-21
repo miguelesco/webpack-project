@@ -4,9 +4,6 @@ import { listWrapper } from './utilities.js';
 function render() {
   if (!storage.get()) {
     storage.set('elements', '[]');
-    storage.addElement('Make Dinner');
-    storage.addElement('Wash bath');
-    storage.addElement('Call dad');
   }
   listWrapper.innerHTML = '';
   storage.get().forEach((element, i) => {

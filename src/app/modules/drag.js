@@ -1,11 +1,13 @@
 import storage from './storage.js';
 import checkLabels, { listWrapper } from './utilities.js';
 import render from './list.js';
+import checkCompleted from './completed.js';
 
-const list = storage.get();
+let list = [];
 
 const Drag = {
   handdler() {
+    list = storage.get();
     Array.from(listWrapper.children).forEach((element, i) => {
       const dragabbleBtn = element.children[2];
       dragabbleBtn.addEventListener('mousedown', () => {
@@ -30,7 +32,7 @@ const Drag = {
   },
   swap(draggedIndex, dropIndex) {
     // We get the current items
-
+    list = storage.get();
     const dragged = list[draggedIndex];
     const drop = list[dropIndex];
 
@@ -48,6 +50,7 @@ const Drag = {
     render();
     checkLabels();
     this.handdler();
+    checkCompleted();
   },
 };
 
