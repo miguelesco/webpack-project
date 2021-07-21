@@ -43,7 +43,6 @@ const Drag = {
     // Update their indexes to reflect their new positions
     list[dropIndex].index = Number(dropIndex);
     list[draggedIndex].index = Number(draggedIndex);
-    
 
     storage.set('elements', JSON.stringify(list));
 

@@ -41,6 +41,7 @@ ul {
   justify-content: space-between;
   background: #f6f6f6;
 }
+
 .footer__p {
   font-family: muli, sans-serif;
   font-style: normal;
@@ -53,9 +54,11 @@ ul {
 header {
   background: #2e8ae6;
 }
+
 header nav {
   padding: calc(1rem + 0.8vw) calc(1.5rem + 4.5vw);
 }
+
 header nav a {
   font-family: muli, sans-serif;
   font-style: normal;
@@ -68,6 +71,7 @@ header nav a {
 .content {
   padding: calc(1rem + 0.8vw) calc(1.5rem + 4.5vw);
 }
+
 .content h1 {
   margin: calc(1rem + 2vh) 0;
   font-family: muli, sans-serif;
@@ -78,6 +82,7 @@ header nav a {
   text-align: center;
   color: #222;
 }
+
 .content .list-container {
   position: relative;
   margin: calc(1rem + 2vh) 0;
@@ -88,6 +93,7 @@ header nav a {
   border: none;
   box-shadow: 0 5px 8px 0 #bebabe;
 }
+
 .content .list-container-title {
   padding: calc(0.5rem + 0.3vw) calc(0.8rem + 0.5vw);
   border-bottom: 1px solid #ebebeb;
@@ -96,6 +102,7 @@ header nav a {
   align-items: center;
   justify-content: space-between;
 }
+
 .content .list-container-title h2 {
   font-family: muli, sans-serif;
   font-style: normal;
@@ -104,11 +111,13 @@ header nav a {
   line-height: 32px;
   color: #222;
 }
+
 .content .list-container-title i {
   font-size: calc(11px + 0.3vw);
   cursor: pointer;
   color: #aaa;
 }
+
 .content .list-container .input-task {
   width: 100%;
   height: calc(2.5rem + 0.4vw);
@@ -123,11 +132,13 @@ header nav a {
   padding: 0 calc(0.8rem + 0.5vw);
   border-bottom: 1px solid #ebebeb;
 }
+
 .content .list-container ul {
   min-height: 200px;
   max-height: 45vh;
   overflow: auto;
 }
+
 .content .list-container ul li {
   font-family: muli, sans-serif;
   font-style: normal;
@@ -142,27 +153,33 @@ header nav a {
   padding: calc(0.5rem + 0.3vw) calc(0.8rem + 0.5vw);
   border-bottom: 1px solid #ebebeb;
 }
+
 .content .list-container ul li input {
   flex-basis: 10%;
   cursor: pointer;
 }
+
 .content .list-container ul li label {
   flex-basis: 77%;
   outline: none;
   border-radius: 5px;
   padding: 0 8px;
 }
+
 .content .list-container ul li label:focus {
   background-color: yellow;
 }
+
 .content .list-container ul li .remove {
   flex-basis: 5%;
   cursor: pointer;
   color: #aaa;
 }
+
 .content .list-container ul li .remove:hover {
   color: red;
 }
+
 .content .list-container .btn-clear {
   position: sticky;
   left: 0;
@@ -179,5 +196,3 @@ header nav a {
   background: #f6f6f6;
   cursor: pointer;
 }
-
-/*# sourceMappingURL=main.css.map */
