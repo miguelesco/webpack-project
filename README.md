@@ -15,13 +15,15 @@
 
 ## :hammer: Built With
 
-- HTML, CSS and Javascript
+- HTML, CSS and Javascript.
 
 To get a local copy up and running follow these simple steps:
 
 1. Go to the [repository page](https://github.com/miguelesco/webpack-project).
 2. Press the "Code" button and copy the link.
 3. Clone it using git command `git clone <link>`.
+4. In the project folder run `npm install`
+5. Then run in the terminal `npm run dev` (for development enviroment) or `npm run build`
 
 ## :blue_book: Learning Objectives
 
