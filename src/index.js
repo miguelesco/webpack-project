@@ -1,8 +1,14 @@
 import './main.css';
-import listRender from './app/modules/list.js';
+import render from './app/modules/list.js';
+import checkLabels from './app/modules/utilities.js';
+import drag from './app/modules/drag.js';
+import add from './app/modules/add.js';
 
 const init = () => {
-  listRender();
+  render();
+  checkLabels();
+  drag.handdler();
+  add();
 };
 
 init();

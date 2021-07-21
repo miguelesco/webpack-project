@@ -20,6 +20,10 @@ ul {
   text-decoration: none;
 }
 
+.scroll {
+  cursor: all-scroll;
+}
+
 .completed {
   text-decoration: line-through;
   color: #bbb;
