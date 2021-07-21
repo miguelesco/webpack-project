@@ -1,8 +1,5 @@
-import checkLabels from './utilities.js';
 import storage from './storage.js';
-
-const listWrapper = document.querySelector('.list');
-const input = document.querySelector('.input-task');
+import { listWrapper } from './utilities.js';
 
 function render() {
   if (!storage.get()) {
@@ -17,25 +14,11 @@ function render() {
       <li data-id="${i}" draggable="true" class="item">
         <input type="checkbox" class="checkbox">
         <label class="text-task"  contenteditable="true">${element.description}</label>
-        <i class="fas fa-ellipsis-v icon" aria-hidden="true"></i>
+        <i class="fas fa-ellipsis-v icon scroll" aria-hidden="true"></i>
       </li>
     `;
     listWrapper.innerHTML += newLi;
   });
 }
 
-const listRender = () => {
-  render();
-  checkLabels();
-};
-
-input.addEventListener('keyup', (event) => {
-  event.preventDefault();
-  if (event.keyCode === 13) {
-    storage.addElement(input.value);
-    input.value = '';
-    listRender();
-  }
-});
-
-export default listRender;
+export default render;
