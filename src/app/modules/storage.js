@@ -1,3 +1,4 @@
+
 const { localStorage } = window;
 
 const storage = {
@@ -19,9 +20,17 @@ const storage = {
 
     localStorage.setItem('elements', JSON.stringify(oldElements));
   },
-  remove() {
+  remove(index) {
 
   },
+  removeCompleted () {
+    const oldElements = this.get();
+    const filterElements = oldElements.filter((element) => !element.completed);
+    this.set('elements', JSON.stringify(filterElements));
+  },
+  removeAll () {
+    this.set('elements', '[]');
+  }
 };
 
 export default storage;
