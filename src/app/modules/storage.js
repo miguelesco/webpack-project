@@ -29,7 +29,7 @@ const storage = {
 
     localStorage.setItem('elements', JSON.stringify(oldElements));
   },
-
+  /* eslint-disable */
   remove(index) {
     const elements = this.get();
     const filterElements = elements.filter((_, i) => i !== index);
