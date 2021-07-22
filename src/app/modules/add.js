@@ -2,6 +2,7 @@ import render from './list.js';
 import drag from './drag.js';
 import checkLabels from './utilities.js';
 import storage from './storage.js';
+import checkCompleted from './completed.js';
 
 const input = document.querySelector('.input-task');
 
@@ -14,6 +15,7 @@ export default function add() {
       render();
       checkLabels();
       drag.handdler();
+      checkCompleted();
     }
   });
 }

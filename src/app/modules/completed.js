@@ -1,7 +1,7 @@
-import { listWrapper } from './utilities.js';
 import storage from './storage.js';
 
 let list = [];
+const listWrapper = document.querySelector('.list');
 
 /* eslint-disable */
 

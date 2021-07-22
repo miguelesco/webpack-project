@@ -1,5 +1,6 @@
 import storage from './storage.js';
-import { listWrapper } from './utilities.js';
+
+const listWrapper = document.querySelector('.list');
 
 function render() {
   if (!storage.get()) {
