@@ -1,9 +1,12 @@
+/* eslint-disable */
+
 import storage from './storage.js';
-import checkLabels, { listWrapper } from './utilities.js';
+import checkLabels from './utilities.js';
 import render from './list.js';
 import checkCompleted from './completed.js';
 
 let list = [];
+const listWrapper = document.querySelector('.list');
 
 const Drag = {
   handdler() {

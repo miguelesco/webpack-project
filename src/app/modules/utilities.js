@@ -1,7 +1,9 @@
+/* eslint-disable */
+
 import storage from './storage.js';
 import clear from './remove.js';
 
-export const listWrapper = document.querySelector('.list');
+const listWrapper = document.querySelector('.list');
 
 let dobleClick = false;
 

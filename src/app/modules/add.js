@@ -4,7 +4,6 @@ import checkLabels from './utilities.js';
 import storage from './storage.js';
 import checkCompleted from './completed.js';
 
-
 const input = document.querySelector('.input-task');
 
 export default function add() {
