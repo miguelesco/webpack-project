@@ -27,6 +27,10 @@ const clear = {
       storage.removeAll();
       updatePage();
     });
+  },
+  element (index) {
+    storage.remove(index);
+    updatePage();
   }
 };
 
