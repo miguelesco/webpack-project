@@ -1,7 +1,6 @@
 import storage from './storage.js';
 import reload from './reload.js';
 
-
 const input = document.querySelector('.input-task');
 
 export default function add() {
