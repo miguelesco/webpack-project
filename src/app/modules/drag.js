@@ -1,9 +1,7 @@
 /* eslint-disable */
 
 import storage from './storage.js';
-import checkLabels from './utilities.js';
-import render from './list.js';
-import checkCompleted from './completed.js';
+import reload from './reload.js';
 
 let list = [];
 const listWrapper = document.querySelector('.list');
@@ -50,10 +48,7 @@ const Drag = {
     storage.set('elements', JSON.stringify(list));
 
     // Then finally update the display
-    render();
-    checkLabels();
-    this.handdler();
-    checkCompleted();
+    reload();
   },
 };
 
