@@ -7,7 +7,7 @@
     "sass": "sass --watch src/app/scss/main.scss src/main.css",
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch",
-    "test": "jest --coverage"
+    "test": "jest "
   },
   "keywords": [],
   "author": "Miguelangel Escorche",
