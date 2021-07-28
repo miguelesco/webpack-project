@@ -1,7 +1,7 @@
 import storage from './storage.js';
 
 export default function add(inputValue = '', ul) {
-  storage.addElement(inputValue); 
+  storage.addElement(inputValue);
   ul.innerHTML = '';
   storage.get().forEach((element, i) => {
     const newLi = `
@@ -12,6 +12,6 @@ export default function add(inputValue = '', ul) {
       </li>
     `;
     ul.innerHTML += newLi;
-  });  
+  });
   return storage.get();
 }

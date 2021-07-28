@@ -1,10 +1,12 @@
 class LocalStorage {
-  constructor () {
+  constructor() {
     this.data = [];
   }
-  setItem( value) {
+
+  setItem(value) {
     this.data = value;
   }
+
   getItem() {
     return this.data;
   }

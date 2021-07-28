@@ -15,15 +15,14 @@ const storage = {
         description,
         completed: true,
         index: oldStorage.length,
-      }; 
-    }else {
+      };
+    } else {
       newElement = {
         description,
         completed: false,
         index: oldStorage.length,
       };
     }
-
 
     oldStorage.push(newElement);
 
@@ -33,8 +32,9 @@ const storage = {
     return localStorage.getItem();
   },
   set(val) {
-    localStorage.setItem( val);
+    localStorage.setItem(val);
   },
+  /* eslint-disable */
   remove(index) {
     const elements = this.get();
     const filterElements = elements.filter((_, i) => i !== index);

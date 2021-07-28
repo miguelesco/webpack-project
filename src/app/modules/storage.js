@@ -36,13 +36,13 @@ const storage = {
     filterElements.map((elements, i) => elements.index = i);
     this.set('elements', JSON.stringify(filterElements));
   },
-
+  
   removeCompleted() {
     const oldElements = this.get();
     const filterElements = oldElements.filter((element) => !element.completed);
     this.set('elements', JSON.stringify(filterElements));
   },
-
+  
   removeAll() {
     this.set('elements', '[]');
   },
