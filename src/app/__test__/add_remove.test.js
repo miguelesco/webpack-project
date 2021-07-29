@@ -60,21 +60,7 @@ describe('Test for the remove functions', () => {
   test('The element with the index 0 should remove', () => {
     expect(TaskList.children.length).toBe(2);
   });
-  test('remove all completed elements', () => {
-    const storageWithoutCompleted = remove.completed(TaskList);
-    expect(storageWithoutCompleted).toEqual(
-      expect.arrayContaining([
-        {
-          description: 'Wash my Teeth',
-          completed: false,
-          index: 0,
-        },
-      ]),
-    );
-  });
-  test('The element property completed in true should be remove', () => {
-    expect(TaskList.children.length).toBe(1);
-  });
+
   test('remove all elements in the storage', () => {
     const removeAll = remove.all(TaskList);
     expect(removeAll.length).toBe(0);

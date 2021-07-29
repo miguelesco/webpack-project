@@ -28,6 +28,13 @@ const storage = {
 
     localStorage.setItem(oldStorage);
   },
+  updateElement(index, newText) {
+    const elements = this.get();
+    const elementToBeUpdate = elements[index];
+    elementToBeUpdate.description = newText;
+    elements[index] = elementToBeUpdate;
+    this.set(elements);
+  },
   get() {
     return localStorage.getItem();
   },
