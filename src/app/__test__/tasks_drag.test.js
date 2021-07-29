@@ -3,10 +3,12 @@
  */
 import add from '../modules/add.js';
 import checkCompleted from '../modules/completed.js';
+import drag from '../modules/drag.js';
 import updateItems from '../modules/__mocks__/updateItems.js';
 
 jest.mock('../modules/add.js');
 jest.mock('../modules/completed.js');
+jest.mock('../modules/drag.js');
 
 describe('editing the task description', () => {
   document.body.innerHTML = `<div class="list-container">
@@ -23,7 +25,6 @@ describe('editing the task description', () => {
 
   listTask.forEach(element => add(element, ul));
 
-  const label = document.getElementsByClassName('text-task');
   
   test('the task should change his value in the storage', () => {
     // The first task is Make Candy now lets change that
@@ -58,7 +59,63 @@ describe('Test for the update completed method', () => {
 });
 
 describe('Test Drag/Drop functionality', () => {
+  const ul = document.querySelector('.container-list');
+
+  test('change the index of the elements on drag', () => {
+    const dragElement = 0;
+    const dropElement = 2;
+
+    const newStorage = drag.swap(dragElement, dropElement, ul);
+
+    expect(newStorage).toEqual(
+      expect.arrayContaining([
+        {
+          description: 'Send Video',
+          completed: false,
+          index: 0
+        },
+        {
+          description: 'Buy Ticket',
+          completed: true,
+          index: 1
+        },
+        {
+          description: 'Change Task description',
+          completed: true,
+          index: 2
+        },
+      ])
+    );
+  });
   
+  test('change the index of the elements on drag again', () => {
+    const dragElement = 1;
+    const dropElement = 2;
+
+    const newStorage = drag.swap(dragElement, dropElement, ul);
+
+    expect(newStorage).toEqual(
+      expect.arrayContaining([
+        {
+          description: 'Send Video',
+          completed: false,
+          index: 0
+        },
+        {
+          description: 'Change Task description',
+          completed: true,
+          index: 1
+        },
+        {
+          description: 'Buy Ticket',
+          completed: true,
+          index: 2
+        },
+      ])
+    );
+  });
+  
+
 })
 
 
