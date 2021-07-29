@@ -5,7 +5,9 @@ import add from '../modules/add.js';
 import checkCompleted from '../modules/completed.js';
 import drag from '../modules/drag.js';
 import updateItems from '../modules/__mocks__/updateItems.js';
+import remove from '../modules/remove.js';
 
+jest.mock('../modules/remove.js');
 jest.mock('../modules/add.js');
 jest.mock('../modules/completed.js');
 jest.mock('../modules/drag.js');
@@ -116,6 +118,28 @@ describe('Test Drag/Drop functionality', () => {
   });
   
 
+});
+
+describe('Test remove completed task', () => {
+  const ul = document.querySelector('.container-list');
+  
+  test('remove all completed elements', () => {
+    const storageWithoutCompleted = remove.completed(ul);
+    expect(storageWithoutCompleted).toEqual(
+      expect.arrayContaining([
+        {
+          description: 'Send Video',
+          completed: false,
+          index: 0
+        },
+      ]),
+    );
+  });
+
+  test('The element property completed in true should be remove', () => {
+    expect(ul.children.length).toBe(1);
+  });
 })
+
 
 
