@@ -1,6 +1,6 @@
 import storage from './storage.js';
 
-export default function updateDescription (i, newText, ul) {
+export default function updateDescription(i, newText, ul) {
   storage.updateElement(i, newText);
   ul.innerHTML = '';
   storage.get().forEach((element, i) => {

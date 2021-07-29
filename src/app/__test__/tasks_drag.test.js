@@ -22,34 +22,30 @@ describe('editing the task description', () => {
   const listTask = [
     'Make Candy',
     'Buy Ticket',
-    'Send Video'
+    'Send Video',
   ];
 
-  listTask.forEach(element => add(element, ul));
+  listTask.forEach((element) => add(element, ul));
 
-  
   test('the task should change his value in the storage', () => {
     // The first task is Make Candy now lets change that
     const newDescription = 'Change Task description';
     const descriptionUpdate = updateItems(0, newDescription, ul);
 
-    expect(descriptionUpdate[0].description).toBe('Change Task description')
+    expect(descriptionUpdate[0].description).toBe('Change Task description');
   });
 
   test('The task should change in the ul', () => {
     const firstElementofTheList = ul.children[0];
 
     expect(firstElementofTheList.textContent)
-    .toContain('Change Task description');
+      .toContain('Change Task description');
   });
-  
-  
 });
 
 describe('Test for the update completed method', () => {
   const ul = document.querySelector('.container-list');
 
-  
   test('completed property should change to TRUE', () => {
     const indexOfElementCompleted = 1;
 
@@ -57,7 +53,6 @@ describe('Test for the update completed method', () => {
 
     expect(updateCompleted[indexOfElementCompleted].completed).toBe(true);
   });
-  
 });
 
 describe('Test Drag/Drop functionality', () => {
@@ -74,22 +69,22 @@ describe('Test Drag/Drop functionality', () => {
         {
           description: 'Send Video',
           completed: false,
-          index: 0
+          index: 0,
         },
         {
           description: 'Buy Ticket',
           completed: true,
-          index: 1
+          index: 1,
         },
         {
           description: 'Change Task description',
           completed: true,
-          index: 2
+          index: 2,
         },
-      ])
+      ]),
     );
   });
-  
+
   test('change the index of the elements on drag again', () => {
     const dragElement = 1;
     const dropElement = 2;
@@ -101,19 +96,19 @@ describe('Test Drag/Drop functionality', () => {
         {
           description: 'Send Video',
           completed: false,
-          index: 0
+          index: 0,
         },
         {
           description: 'Change Task description',
           completed: true,
-          index: 1
+          index: 1,
         },
         {
           description: 'Buy Ticket',
           completed: true,
-          index: 2
+          index: 2,
         },
-      ])
+      ]),
     );
   });
 });
@@ -127,7 +122,7 @@ describe('Test remove completed task', () => {
         {
           description: 'Send Video',
           completed: false,
-          index: 0
+          index: 0,
         },
       ]),
     );

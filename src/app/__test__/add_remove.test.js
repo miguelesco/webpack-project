@@ -60,7 +60,7 @@ describe('Test for the remove functions', () => {
   test('The element with the index 0 should remove', () => {
     expect(TaskList.children.length).toBe(2);
   });
-  
+
   test('remove all elements in the storage', () => {
     const removeAll = remove.all(TaskList);
     expect(removeAll.length).toBe(0);
