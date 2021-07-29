@@ -2,9 +2,11 @@
  * @jest-environment jsdom
  */
 import add from '../modules/add.js';
+import checkCompleted from '../modules/completed.js';
 import updateItems from '../modules/__mocks__/updateItems.js';
 
 jest.mock('../modules/add.js');
+jest.mock('../modules/completed.js');
 
 describe('editing the task description', () => {
   document.body.innerHTML = `<div class="list-container">
@@ -39,4 +41,24 @@ describe('editing the task description', () => {
   });
   
   
+});
+
+describe('Test for the update completed method', () => {
+  const ul = document.querySelector('.container-list');
+
+  
+  test('completed property should change to TRUE', () => {
+    const indexOfElementCompleted = 1;
+
+    const updateCompleted = checkCompleted(ul, indexOfElementCompleted);
+
+    expect(updateCompleted[indexOfElementCompleted].completed).toBe(true);
+  });
+  
+});
+
+describe('Test Drag/Drop functionality', () => {
+  
 })
+
+
