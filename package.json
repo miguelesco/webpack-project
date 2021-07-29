@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass" : "sass --watch src/app/scss/main.scss src/main.css",
+    "sass": "sass --watch src/app/scss/main.scss src/main.css",
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest "
   },
   "keywords": [],
   "author": "Miguelangel Escorche",
   "license": "ISC",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.14.5",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.2.0",
     "eslint": "^7.31.0",
@@ -20,6 +21,7 @@
     "eslint-plugin-import": "^2.23.4",
     "hint": "^6.1.4",
     "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.0.6",
     "lodash": "^4.17.21",
     "sass": "^1.35.2",
     "sass-loader": "^12.1.0",
