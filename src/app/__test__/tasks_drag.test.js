@@ -116,11 +116,23 @@ describe('Test Drag/Drop functionality', () => {
       ])
     );
   });
-  
-
 });
 
-
-
-
-
+describe('Test remove completed task', () => {
+  const ul = document.querySelector('.container-list');
+  test('remove all completed elements', () => {
+    const storageWithoutCompleted = remove.completed(ul);
+    expect(storageWithoutCompleted).toEqual(
+      expect.arrayContaining([
+        {
+          description: 'Send Video',
+          completed: false,
+          index: 0
+        },
+      ]),
+    );
+  });
+  test('The element property completed in true should be remove', () => {
+    expect(ul.children.length).toBe(1);
+  });
+});
